@@ -1,20 +1,32 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Ejercicio N°11</title>
+    <title>Ejercicio 12</title>
+    <script>
+        function acumularValores() {
+            let suma = 0;
+            while (true) {
+                let valor = parseInt(prompt("Ingrese un valor (9999 para finalizar):"));
+                if (valor === 9999) {
+                    break;
+                }
+                suma += valor;
+            }
+            document.getElementById("resultado").innerText = `Valor acumulado: ${suma}`;
+            if (suma > 0) {
+                document.getElementById("estado").innerText = "El valor acumulado es mayor a cero.";
+            } else if (suma < 0) {
+                document.getElementById("estado").innerText = "El valor acumulado es menor a cero.";
+            } else {
+                document.getElementById("estado").innerText = "El valor acumulado es cero.";
+            }
+        }
+    </script>
 </head>
 <body>
-    <script>
-    x=8
-    while (x<=504)
-   {
-document.write(x);
-document.write('<br>');
-     x=x+8;
-}
-    </script>
-  
+    <button onclick="acumularValores()">Iniciar</button>
+    <p id="resultado"></p>
+    <p id="estado"></p>
 </body>
 </html>
